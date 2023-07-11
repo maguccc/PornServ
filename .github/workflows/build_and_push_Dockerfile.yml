@@ -33,7 +33,7 @@ jobs:
       - name: Build and push
         uses: docker/build-push-action@v4
         with:
-          context: ircporn/
+          context: ./ircporn/
           platforms: linux/amd64
           file: Dockerfile
           push: true
