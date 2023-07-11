@@ -27,7 +27,7 @@ jobs:
 
       - name: test
         run: |
-          apt-get install tree
+          sudo apt-get install -y tree
           tree
 
       - name: Build and push
