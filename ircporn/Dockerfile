@@ -3,7 +3,7 @@ FROM alpine:3.18
 LABEL maintainer "MAGICCC <magic@kthx.at>"
 
 
-COPY requirements.txt /tmp/
+COPY requirements.txt .
 RUN apk upgrade --no-cache \
     && apk add --update --no-cache \
     tzdata \
@@ -16,4 +16,4 @@ RUN apk upgrade --no-cache \
     && \
     if [[ ! -e /usr/bin/python ]]; then ln -sf /usr/bin/python3 /usr/bin/python; fi \
     && rm -r /root/.cache \
-    && pip3 install --requirement /tmp/requirements.txt
+    && pip3 install --requirement requirements.txt
